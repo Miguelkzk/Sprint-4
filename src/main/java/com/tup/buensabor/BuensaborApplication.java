@@ -40,6 +40,8 @@ public class BuensaborApplication {
 	ArticuloInsumoRepository articuloInsumoRepository;
 	@Autowired
 	ProductoRepository productoRepository;
+	@Autowired
+	LocalidadRepository localidadRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(
 				BuensaborApplication.class, args);
@@ -48,7 +50,7 @@ public class BuensaborApplication {
 	@Bean
 	CommandLineRunner init() {
 		return args -> {
-			System.out.println("Boca");
+			System.out.println("Funciona!");
 
 
 		BigDecimal decimal = new BigDecimal("5443.00");
@@ -63,18 +65,18 @@ public class BuensaborApplication {
 				.fechaBaja(date)
 				.fechaModificacion(date)
 				.auth0Id("1")
-				.username("MiguelElMasQueSabe")
+				.username("")
 				.build();
 
 
 		Cliente cliente = Cliente.builder()
-				.email("boca@gmail.com")
-				.apellido("Cruzliak")
-				.nombre("Miguel")
+				.email("Diegote@gmail.com")
+				.apellido("Maradona")
+				.nombre("Diego")
 				.fechaAlta(date)
 				.fechaBaja(date)
 				.fechaModificacion(date)
-				.telefono("2613615007")
+				.telefono("2613612107")
 				.build();
 
 		ArticuloInsumo articuloInsumo = ArticuloInsumo.builder()
@@ -96,8 +98,8 @@ public class BuensaborApplication {
 				.fechaBaja(date)
 				.fechaModificacion(date)
 				.urlImagen("https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg")
-				.descripcion("Boca")
-				.denominacion("Denominacion").
+				.descripcion("Inigualable pan con semillas de sésamo, tres medallones de carne 100% vacuna, tres fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty")
+				.denominacion("Hamburguesa Tasty").
 				build();
 
 
@@ -114,10 +116,14 @@ public class BuensaborApplication {
 				.subtotal(decimal)
 				.subtotalCosto(decimal3)
 				.build();
+
+		Localidad localidad= Localidad.builder()
+					.codigoPostal(5521)
+					.nombre("Guaymallén")
+					.build();
+
 		Domicilio domicilio = Domicilio.builder()
-				.codigoPostal(5516)
 				.calle("Los Reyunos")
-				.localidad("Guaymallen")
 				.numero(4517)
 				.fechaAlta(date)
 				.fechaBaja(date)
@@ -125,6 +131,7 @@ public class BuensaborApplication {
 				.numeroDpto(27)
 				.pisoDpto(3)
 				.build();
+
 
 		Factura factura = Factura.builder()
 				.formaPago(FormaPago.MERCADO_PAGO)
@@ -172,6 +179,7 @@ public class BuensaborApplication {
 			pedido.setDomicilioEntrega(domicilio);
 			factura.setPedido(pedido);
 			domicilio.setCliente(cliente);
+			localidad.agregardomicilio(domicilio);
 			detallePedido.setPedido(pedido);
 			detallePedido.setProducto(producto);
 			detallePedido.setArticuloInsumo(articuloInsumo);
@@ -186,6 +194,7 @@ public class BuensaborApplication {
 			articuloInsumoRepository.save(articuloInsumo);
 			usuarioRepository.save(usuario);
 			clienteRepository.save(cliente);
+			localidadRepository.save(localidad);
 			domicilioRepository.save(domicilio);
 			pedidoRepository.save(pedido);
 			facturaRepository.save(factura);
@@ -194,6 +203,7 @@ public class BuensaborApplication {
 			facturaRepository.save(factura);
 			detalleFacturaRepository.save(detalleFactura);
 			detalleProductoRepository.save(detalleProducto);
+
 
 
 

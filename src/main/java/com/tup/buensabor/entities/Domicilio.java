@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Builder
@@ -24,13 +26,6 @@ public class Domicilio extends Base {
     @NotNull
     @Column(precision = 5)
     private Integer numero;
-
-    @NotNull
-    @Column(precision = 4)
-    private Integer codigoPostal;
-
-    @NotNull
-    private String localidad;
 
     @Column(name = "numero_vivienda")
     private Integer numeroDpto;
@@ -55,5 +50,6 @@ public class Domicilio extends Base {
     @Column(name = "fecha_baja")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
+
 
 }
