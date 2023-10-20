@@ -2,6 +2,8 @@ package com.tup.buensabor.repositorios;
 
 import com.tup.buensabor.entities.DetalleProducto;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface DetalleProductoRepository extends JpaRepository<DetalleProducto, Long> {
+@Repository
+public interface DetalleProductoRepository extends BaseRepository<DetalleProducto,Long> {
 }

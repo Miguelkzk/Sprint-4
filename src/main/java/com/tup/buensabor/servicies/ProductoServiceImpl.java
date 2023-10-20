@@ -5,6 +5,8 @@ import com.tup.buensabor.repositorios.BaseRepository;
 import com.tup.buensabor.repositorios.ProductoRepository;
 import org.apache.tomcat.websocket.WsIOException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,12 +21,14 @@ public class ProductoServiceImpl extends BaseServiceImpl<Producto,Long> implemen
     }
 
     @Override
-    public List<Producto> search(String filtro) throws Exception {
+    public Page<Producto> search(String filtro, Pageable pageable) throws Exception {
         try{
-            List<Producto> productos=productoRepository.searchnativo(filtro);
+            Page<Producto> productos=productoRepository.searchnativo(filtro,pageable);
             return productos;
         }catch (Exception e){
             throw new Exception((e.getMessage()));
         }
     }
+
+
 }
