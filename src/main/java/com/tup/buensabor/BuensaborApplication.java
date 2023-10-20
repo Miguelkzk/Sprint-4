@@ -5,7 +5,6 @@ import com.tup.buensabor.enums.EstadoPedido;
 import com.tup.buensabor.enums.FormaPago;
 import com.tup.buensabor.enums.TipoEnvio;
 import com.tup.buensabor.repositorios.*;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,11 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @SpringBootApplication
 public class BuensaborApplication {
@@ -26,7 +21,7 @@ public class BuensaborApplication {
 	@Autowired
 	DomicilioRepository domicilioRepository;
 	@Autowired
-	RubroArticuloRepository rubroArticuloRepository;
+	CategoriaArticuloRepository categoriaArticuloRepository;
 	@Autowired
 	PedidoRepository pedidoRepository;
 	@Autowired
@@ -155,31 +150,6 @@ public class BuensaborApplication {
 				.tipoEnvio(TipoEnvio.DELIVERY)
 				.horaEstimadaFinalizacion(date)
 				.build();
-		RubroArticulo rubroArticulo = RubroArticulo.builder()
-				.fechaAlta(date)
-				.fechaBaja(date)
-				.fechaModificacion(date)
-				.denominacion("Denominacion")
-				.subRubros(new ArrayList<>())
-				.build();
-		RubroArticulo rubroArticuloPadre = RubroArticulo.builder()
-				.fechaAlta(date)
-				.fechaBaja(date)
-				.fechaModificacion(date)
-				.denominacion("Padre")
-				.build();
-		RubroArticulo rubroArticuloHijo1 = RubroArticulo.builder()
-				.fechaAlta(date)
-				.fechaBaja(date)
-				.fechaModificacion(date)
-				.denominacion("Hijo1")
-				.build();
-		RubroArticulo rubroArticuloHijo2 = RubroArticulo.builder()
-				.fechaAlta(date)
-				.fechaBaja(date)
-				.fechaModificacion(date)
-				.denominacion("Hijo2")
-				.build();
 
 		UnidadMedida unidadMedida = UnidadMedida.builder()
 				.abreviatura("KG")
@@ -188,47 +158,31 @@ public class BuensaborApplication {
 				.fechaBaja(date)
 				.fechaModificacion(date)
 				.build();
+		CategoriaArticulo categoriaArticulo = CategoriaArticulo.builder()
+				.denominacion("Carne")
+				.fechaAlta(date)
+				.fechaBaja(date)
+				.fechaModificacion(date)
+				.build();
+
+		articuloInsumo.setCategoriaArticulo(categoriaArticulo);
 
 			cliente.setUsuario(usuario);
-
 			pedido.setCliente(cliente);
 			pedido.setDomicilioEntrega(domicilio);
-
 			factura.setPedido(pedido);
-
 			domicilio.setCliente(cliente);
-
 			detallePedido.setPedido(pedido);
 			detallePedido.setArticuloManufacturado(articuloManufacturado);
 			detallePedido.setArticuloInsumo(articuloInsumo);
-
 			detalleArticuloManufacturado.setArticuloInsumo(articuloInsumo);
 			detalleArticuloManufacturado.setArticuloManufacturado(articuloManufacturado);
-
 			detalleFactura.setArticuloManufacturado(articuloManufacturado);
 			detalleFactura.setArticuloInsumo(articuloInsumo);
 			detalleFactura.setFactura(factura);
-
-			articuloInsumo.setRubroArticulo(rubroArticulo);
 			articuloInsumo.setUnidadMedida(unidadMedida);
-
-			rubroArticulo.setRubroPadre(rubroArticuloPadre);
-
-			List<RubroArticulo> subRubros = new ArrayList<>();
-			subRubros.add(rubroArticuloHijo1);
-			subRubros.add(rubroArticuloHijo2);
-
-			rubroArticuloHijo1.setRubroPadre(rubroArticulo);
-			rubroArticuloHijo2.setRubroPadre(rubroArticulo);
-
-			rubroArticulo.setSubRubros(subRubros);
-
-			
 			unidadMedidaRepository.save(unidadMedida);
-			rubroArticuloRepository.save(rubroArticuloPadre);
-			rubroArticuloRepository.save(rubroArticulo);
-			rubroArticuloRepository.save(rubroArticuloHijo1);
-			rubroArticuloRepository.save(rubroArticuloHijo2);
+			categoriaArticuloRepository.save(categoriaArticulo);
 			articuloInsumoRepository.save(articuloInsumo);
 			usuarioRepository.save(usuario);
 			clienteRepository.save(cliente);
@@ -240,6 +194,7 @@ public class BuensaborApplication {
 			facturaRepository.save(factura);
 			detalleFacturaRepository.save(detalleFactura);
 			detalleArticuloManufacturadoRepository.save(detalleArticuloManufacturado);
+
 
 
 			};

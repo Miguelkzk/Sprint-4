@@ -16,6 +16,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Getter
 @Setter
+
 public class ArticuloInsumo extends Base {
 
     @NotNull
@@ -43,8 +44,8 @@ public class ArticuloInsumo extends Base {
 
     @NotNull
     @ManyToOne()
-    @JoinColumn(name = "id_rubro_articulo")
-    private RubroArticulo rubroArticulo;
+    @JoinColumn(name = "id_categoria")
+    private CategoriaArticulo categoriaArticulo;
 
     @NotNull
     @Column(name = "fecha_alta")

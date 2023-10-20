@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Getter
 @Setter
+
 public class DetalleFactura extends Base {
 
     @NotNull
