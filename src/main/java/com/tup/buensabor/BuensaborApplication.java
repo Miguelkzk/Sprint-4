@@ -35,11 +35,11 @@ public class BuensaborApplication {
 	@Autowired
 	UsuarioRepository usuarioRepository;
 	@Autowired
-	DetalleArticuloManufacturadoRepository detalleArticuloManufacturadoRepository;
+	DetalleProductoRepository detalleProductoRepository;
 	@Autowired
 	ArticuloInsumoRepository articuloInsumoRepository;
 	@Autowired
-	ArticuloManufacturadoRepository articuloManufacturadoRepository;
+	ProductoRepository productoRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(
 				BuensaborApplication.class, args);
@@ -88,7 +88,7 @@ public class BuensaborApplication {
 				.stockMinimo(decimal2)
 				.build();
 
-		ArticuloManufacturado articuloManufacturado = ArticuloManufacturado.builder()
+		Producto producto = Producto.builder()
 				.costo(decimal1)
 				.precioVenta(decimal3)
 				.tiempoEstimadoCocina(45)
@@ -101,7 +101,7 @@ public class BuensaborApplication {
 				build();
 
 
-		DetalleArticuloManufacturado detalleArticuloManufacturado = DetalleArticuloManufacturado.builder()
+		DetalleProducto detalleProducto = DetalleProducto.builder()
 				.cantidad(decimal2)
 				.build();
 
@@ -173,11 +173,11 @@ public class BuensaborApplication {
 			factura.setPedido(pedido);
 			domicilio.setCliente(cliente);
 			detallePedido.setPedido(pedido);
-			detallePedido.setArticuloManufacturado(articuloManufacturado);
+			detallePedido.setProducto(producto);
 			detallePedido.setArticuloInsumo(articuloInsumo);
-			detalleArticuloManufacturado.setArticuloInsumo(articuloInsumo);
-			detalleArticuloManufacturado.setArticuloManufacturado(articuloManufacturado);
-			detalleFactura.setArticuloManufacturado(articuloManufacturado);
+			detalleProducto.setArticuloInsumo(articuloInsumo);
+			detalleProducto.setArticuloManufacturado(producto);
+			detalleFactura.setProducto(producto);
 			detalleFactura.setArticuloInsumo(articuloInsumo);
 			detalleFactura.setFactura(factura);
 			articuloInsumo.setUnidadMedida(unidadMedida);
@@ -189,11 +189,11 @@ public class BuensaborApplication {
 			domicilioRepository.save(domicilio);
 			pedidoRepository.save(pedido);
 			facturaRepository.save(factura);
-			articuloManufacturadoRepository.save(articuloManufacturado);
+			productoRepository.save(producto);
 			detallePedidoRepository.save(detallePedido);
 			facturaRepository.save(factura);
 			detalleFacturaRepository.save(detalleFactura);
-			detalleArticuloManufacturadoRepository.save(detalleArticuloManufacturado);
+			detalleProductoRepository.save(detalleProducto);
 
 
 

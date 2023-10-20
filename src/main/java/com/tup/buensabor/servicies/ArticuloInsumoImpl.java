@@ -11,6 +11,7 @@ public class ArticuloInsumoImpl extends BaseServiceImpl<ArticuloInsumo, Long> im
     @Autowired
     private ArticuloInsumoRepository articuloInsumoRepository;
 
+
     public ArticuloInsumoImpl(BaseRepository<ArticuloInsumo, Long> baseRepository) {
         super(baseRepository);
     }

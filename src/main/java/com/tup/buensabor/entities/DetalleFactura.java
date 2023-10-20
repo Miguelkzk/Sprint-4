@@ -31,7 +31,7 @@ public class DetalleFactura extends Base {
 
     @ManyToOne()
     @JoinColumn(name = "id_articulo_manufacturado")
-    private ArticuloManufacturado articuloManufacturado;
+    private Producto producto;
 
     @NotNull
     @ManyToOne()

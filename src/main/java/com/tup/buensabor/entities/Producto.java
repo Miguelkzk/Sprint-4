@@ -11,13 +11,13 @@ import java.util.Date;
 @Entity
 @Builder
 @Data
-@Table(name = "articulo_manufacturado")
+@Table(name = "Producto")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
-public class ArticuloManufacturado extends Base {
+public class Producto extends Base {
 
     @NotNull
     private String denominacion;
