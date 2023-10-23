@@ -19,9 +19,16 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido,Long> implements P
     @Override
     public Page<Pedido> search(String filtro, Pageable pageable) throws Exception {
         try{
-            //Page<Pedido> pedidos=pedidoRepository.searchbyestado(filtro,pageable);
-            //Page<Producto> productos=productoRepository.searchbynombre(filtro,pageable);
             Page<Pedido> pedidos=pedidoRepository.searchbyestado(filtro,pageable);
+            return pedidos;
+        }catch (Exception e){
+            throw new Exception((e.getMessage()));
+        }
+    }
+    @Override
+    public Page<Pedido> searchbycliente(String filtro, Pageable pageable) throws Exception {
+        try{
+            Page<Pedido> pedidos=pedidoRepository.searchbycliente(filtro,pageable);
             return pedidos;
         }catch (Exception e){
             throw new Exception((e.getMessage()));

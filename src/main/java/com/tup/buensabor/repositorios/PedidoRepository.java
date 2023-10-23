@@ -18,4 +18,10 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
             nativeQuery = true
     )
     Page<Pedido> searchbyestado(@Param("filtro")String filtro, Pageable pageable);
+
+    @Query(
+            value = "SELECT * FROM pedido WHERE pedido.id_cliente LIKE %:filtro%",
+            nativeQuery = true
+    )
+    Page<Pedido> searchbycliente(@Param("filtro")String filtro, Pageable pageable);
 }
