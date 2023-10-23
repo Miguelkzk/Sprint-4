@@ -24,4 +24,6 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
             nativeQuery = true
     )
     Page<Pedido> searchbycliente(@Param("filtro")String filtro, Pageable pageable);
+
+    
 }
