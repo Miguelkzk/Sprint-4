@@ -15,6 +15,4 @@ public interface ProductoRepository extends BaseRepository<Producto, Long> {
             nativeQuery = true
     )
     Page<Producto> searchbynombre(@Param("filtro")String filtro, Pageable pageable);
-
-
 }
