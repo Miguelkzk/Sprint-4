@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "/categorias")
 
-public class CategoriaController extends BaseControllerImpl<CategoriaArticulo, CategoriaArticuloServiceImpl> {
+public class CategoriaArticuloController extends BaseControllerImpl<CategoriaArticulo, CategoriaArticuloServiceImpl> {
 
     @GetMapping("/searchbyalta")
     public ResponseEntity<?> searchbyalta(Pageable pageable) {
