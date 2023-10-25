@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 public interface ClienteRepository extends BaseRepository<Cliente, Long> {
 
+    //Trae el top de clientes
     @Query(
             value = "SELECT cliente.*, SUM(pedido.total) as total, COUNT(pedido.id) AS cantidad FROM cliente JOIN pedido ON pedido.id_cliente = cliente.id GROUP BY cliente.id, cliente.nombre  ORDER BY cantidad DESC" ,
             nativeQuery = true

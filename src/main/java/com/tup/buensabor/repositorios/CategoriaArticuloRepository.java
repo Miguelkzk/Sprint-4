@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CategoriaArticuloRepository extends BaseRepository<CategoriaArticulo, Long> {
 
+    //Busca categorias activas
     @Query(
             value = "SELECT * FROM categoria WHERE categoria.fecha_baja IS NULL OR categoria.fecha_baja < categoria.fecha_alta;",
             nativeQuery = true
