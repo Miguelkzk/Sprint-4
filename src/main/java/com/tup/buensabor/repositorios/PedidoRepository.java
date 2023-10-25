@@ -1,5 +1,6 @@
 package com.tup.buensabor.repositorios;
 
+import com.tup.buensabor.entities.ArticuloInsumo;
 import com.tup.buensabor.entities.Pedido;
 import com.tup.buensabor.entities.Producto;
 import org.springframework.data.domain.Page;
@@ -24,5 +25,4 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
             nativeQuery = true
     )
     Page<Pedido> searchbycliente(@Param("filtro")String filtro, Pageable pageable);
-
 }
