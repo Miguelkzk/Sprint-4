@@ -144,6 +144,17 @@ public class BuensaborApplication {
 				.mpMerchantOrderId(7981)
 				.mpPaymentId(7848)
 				.build();
+		Factura factura1=Factura.builder()
+				.formaPago(FormaPago.MERCADO_PAGO)
+				.totalVenta(decimal3).fechaAlta(date)
+				.fechaBaja(date)
+				.fechaModificacion(date)
+				.fechaFacturacion(date)
+				.mpPreferenceId("prerenceID")
+				.mpPaymentType("pmt")
+				.mpMerchantOrderId(7981)
+				.mpPaymentId(7848)
+				.build();
 
 		Pedido pedido = Pedido.builder()
 				.total(decimal1)
@@ -158,7 +169,21 @@ public class BuensaborApplication {
 				.horaEstimadaFinalizacion(date)
 				.build();
 
-		UnidadMedida unidadMedida = UnidadMedida.builder()
+			Pedido pedido1 = Pedido.builder()
+					.total(decimal1)
+					.totalCosto(decimal2)
+					.fechaAlta(date)
+					.fechaBaja(date)
+					.fechaModificacion(date)
+					.fechaPedido(date)
+					.estado(EstadoPedido.COMPLETADO)
+					.formaPago(FormaPago.MERCADO_PAGO)
+					.tipoEnvio(TipoEnvio.DELIVERY)
+					.horaEstimadaFinalizacion(date)
+					.build();
+
+
+			UnidadMedida unidadMedida = UnidadMedida.builder()
 				.abreviatura("KG")
 				.denominacion("Masa")
 				.fechaAlta(date)
@@ -178,6 +203,7 @@ public class BuensaborApplication {
 			pedido.setCliente(cliente);
 			pedido.setDomicilioEntrega(domicilio);
 			factura.setPedido(pedido);
+			factura1.setPedido(pedido1);
 			domicilio.setCliente(cliente);
 			localidad.agregardomicilio(domicilio);
 			detallePedido.setPedido(pedido);
@@ -188,6 +214,7 @@ public class BuensaborApplication {
 			detalleFactura.setProducto(producto);
 			detalleFactura.setArticuloInsumo(articuloInsumo);
 			detalleFactura.setFactura(factura);
+			detalleFactura.setFactura(factura1);
 			articuloInsumo.setUnidadMedida(unidadMedida);
 			unidadMedidaRepository.save(unidadMedida);
 			categoriaArticuloRepository.save(categoriaArticulo);
@@ -197,10 +224,12 @@ public class BuensaborApplication {
 			localidadRepository.save(localidad);
 			domicilioRepository.save(domicilio);
 			pedidoRepository.save(pedido);
+			pedidoRepository.save(pedido1);
 			facturaRepository.save(factura);
 			productoRepository.save(producto);
 			detallePedidoRepository.save(detallePedido);
 			facturaRepository.save(factura);
+			facturaRepository.save(factura1);
 			detalleFacturaRepository.save(detalleFactura);
 			detalleProductoRepository.save(detalleProducto);
 

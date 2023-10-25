@@ -20,6 +20,7 @@ public interface ArticuloInsumoRepository extends BaseRepository<ArticuloInsumo,
     @Query(
             value = "SELECT A.* FROM ARTICULO_INSUMO  A  JOIN UNIDAD_MEDIDA U ON A.ID_UNIDAD_MEDIDA=U.ID WHERE A.STOCK_ACTUAL<A.STOCK_MINIMO OR A.STOCK_ACTUAL <=(A.STOCK_MINIMO*0.2);",
             nativeQuery = true
+
     )
     Page<ArticuloInsumo> searchbystock(Pageable pageable);
 }
