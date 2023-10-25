@@ -229,7 +229,6 @@ public class BuensaborApplication {
 			facturaRepository.save(factura);
 			productoRepository.save(producto);
 			detallePedidoRepository.save(detallePedido);
-			facturaRepository.save(factura);
 			facturaRepository.save(factura1);
 			detalleFacturaRepository.save(detalleFactura);
 			detalleProductoRepository.save(detalleProducto);

@@ -27,6 +27,14 @@ public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceIm
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }
     }
+    @GetMapping("/searchDetallePedido")
+    public ResponseEntity<?> searchDetallePedido(@RequestParam String filtro, Pageable pageable) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchDetallePedido(filtro,pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
     @GetMapping("/searchbyFinanza")
     public ResponseEntity<?> searchbyFinanza(@RequestParam String filtro1,String filtro2, Pageable pageable) {
         try {

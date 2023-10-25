@@ -74,5 +74,4 @@ public class Pedido extends Base {
     @Column(name = "fecha_baja")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
-
 }
