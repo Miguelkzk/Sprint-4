@@ -1,35 +1,26 @@
 package com.tup.buensabor.entities;
 
 import jakarta.persistence.*;
-
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Builder
 @Data
+@Table(name = "Rol")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "usuario")
-public class Usuario extends Base {
-
+@ToString
+public class Rol extends Base {
     @NotNull
-    @Column(name = "auth0_id", nullable = false, unique = true)
-    private String auth0Id;
-
-    @NotNull
-    @Column(name = "username", nullable = false)
-    private String username;
-
-    @NotNull
-    @Column(name = "password", nullable = false)
-    private String password;
-
+    private String nombreRol;
     @NotNull
     @Column(name = "fecha_alta")
     @Temporal(TemporalType.TIMESTAMP)
@@ -44,5 +35,13 @@ public class Usuario extends Base {
     private Date fechaBaja;
 
 
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "Id_Rol")
+    @Builder.Default
+    private List<Usuario> usuarios = new ArrayList<>();
 
+    public void agregarusuario(Usuario usuario) {
+        usuarios.add(usuario);
+
+    }
 }

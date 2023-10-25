@@ -42,6 +42,8 @@ public class BuensaborApplication {
 	ProductoRepository productoRepository;
 	@Autowired
 	LocalidadRepository localidadRepository;
+	@Autowired
+	RolRepository rolRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(
 				BuensaborApplication.class, args);
@@ -198,8 +200,14 @@ public class BuensaborApplication {
 				.fechaModificacion(date)
 				.build();
 
-		articuloInsumo.setCategoriaArticulo(categoriaArticulo);
+		Rol rol = Rol.builder()
+				.nombreRol("ADMINISTRADOR")
+				.fechaAlta(date)
+				.fechaBaja(date)
+				.fechaModificacion(date)
+				.build();
 
+			articuloInsumo.setCategoriaArticulo(categoriaArticulo);
 			cliente.setUsuario(usuario);
 			pedido.setCliente(cliente);
 			pedido.setDomicilioEntrega(domicilio);
@@ -217,9 +225,11 @@ public class BuensaborApplication {
 			detalleFactura.setFactura(factura);
 			detalleFactura.setFactura(factura1);
 			articuloInsumo.setUnidadMedida(unidadMedida);
+			rol.agregarusuario(usuario);
 			unidadMedidaRepository.save(unidadMedida);
 			categoriaArticuloRepository.save(categoriaArticulo);
 			articuloInsumoRepository.save(articuloInsumo);
+			rolRepository.save(rol);
 			usuarioRepository.save(usuario);
 			clienteRepository.save(cliente);
 			localidadRepository.save(localidad);
@@ -233,6 +243,9 @@ public class BuensaborApplication {
 			facturaRepository.save(factura1);
 			detalleFacturaRepository.save(detalleFactura);
 			detalleProductoRepository.save(detalleProducto);
+
+
+
 
 
 
