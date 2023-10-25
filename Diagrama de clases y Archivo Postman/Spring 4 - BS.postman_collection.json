@@ -1,0 +1,2259 @@
+{
+	"info": {
+		"_postman_id": "97ad58df-19bf-4d54-b27e-47bc501b4af4",
+		"name": "Spring 4 - BS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29887515"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Sebastian\",\r\n    \"apellido\": \"Villa\",\r\n    \"telefono\": \"2613615007\",\r\n    \"email\": \"boca@gmail.com\",\r\n    \"usuario\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"nombre\": \"Lionel\",\r\n    \"apellido\": \"Messi\",\r\n    \"telefono\": \"2613615007\",\r\n    \"email\": \"boca@gmail.com\",\r\n    \"usuario\": null,\r\n    \"fechaAlta\": null,\r\n    \"fechaModificacion\": null,\r\n    \"fechaBaja\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"clientes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"clientes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Producto",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/productos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"productos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Hamburguesa\",\r\n    \"descripcion\": \"Inigualable pan con semillas de sésamo, tres medallones de carne 100% vacuna, tres fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty\",\r\n    \"tiempoEstimadoCocina\": 45,\r\n    \"precioVenta\": 10000.00,\r\n    \"costo\": 10.00,\r\n    \"urlImagen\": \"https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg\",\r\n    \"fechaAlta\": \"2023-10-25T13:38:31.552+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:38:31.552+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:38:31.552+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"denominacion\": \"Pancho\",\r\n    \"descripcion\": \"Inigualable pan con semillas de sésamo, tres medallones de carne 100% vacuna, tres fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty\",\r\n    \"tiempoEstimadoCocina\": 45,\r\n    \"precioVenta\": 10000.00,\r\n    \"costo\": 10.00,\r\n    \"urlImagen\": \"https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg\",\r\n    \"fechaAlta\": \"2023-10-25T13:38:31.552+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:38:31.552+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:38:31.552+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/productos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"productos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/productos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"productos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/pedido/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"pedido",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechaPedido\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"horaEstimadaFinalizacion\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"total\": 10.00,\r\n    \"totalCosto\": 5.00,\r\n    \"estado\": \"COMPLETADO\",\r\n    \"tipoEnvio\": \"DELIVERY\",\r\n    \"formaPago\": \"MERCADO_PAGO\",\r\n    \"domicilioEntrega\": null,\r\n    \"cliente\": null,\r\n    \"fechaAlta\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:32:59.143+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/pedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"fechaPedido\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"horaEstimadaFinalizacion\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"total\": 5,\r\n    \"totalCosto\": 5.00,\r\n    \"estado\": \"COMPLETADO\",\r\n    \"tipoEnvio\": \"DELIVERY\",\r\n    \"formaPago\": \"MERCADO_PAGO\",\r\n    \"domicilioEntrega\": null,\r\n    \"cliente\": null,\r\n    \"fechaAlta\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:32:59.143+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/pedido/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"pedido",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/pedido/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"pedido",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DetallePedido",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/DetallePedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"DetallePedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/DetallePedido/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"DetallePedido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidad\": 20,\r\n    \"subtotal\": 10000,\r\n    \"subtotalCosto\": 100000.00,\r\n    \"articuloInsumo\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Denominacion\",\r\n        \"urlImagen\": \"https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg\",\r\n        \"precioCompra\": 5443.00,\r\n        \"stockActual\": 10.00,\r\n        \"stockMinimo\": 5.00,\r\n        \"unidadMedida\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Masa\",\r\n            \"abreviatura\": \"KG\",\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"categoriaArticulo\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Carne\",\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    },\r\n    \"producto\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Hamburguesa Tasty\",\r\n        \"descripcion\": \"Inigualable pan con semillas de sésamo, tres medallones de carne 100% vacuna, tres fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty\",\r\n        \"tiempoEstimadoCocina\": 45,\r\n        \"precioVenta\": 10000.00,\r\n        \"costo\": 10.00,\r\n        \"urlImagen\": \"https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg\",\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    },\r\n    \"pedido\": {\r\n        \"id\": 1,\r\n        \"fechaPedido\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"horaEstimadaFinalizacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"total\": 10.00,\r\n        \"totalCosto\": 5.00,\r\n        \"estado\": \"COMPLETADO\",\r\n        \"tipoEnvio\": \"DELIVERY\",\r\n        \"formaPago\": \"MERCADO_PAGO\",\r\n        \"domicilioEntrega\": {\r\n            \"id\": 1,\r\n            \"calle\": \"Los Reyunos\",\r\n            \"numero\": 4517,\r\n            \"numeroDpto\": 27,\r\n            \"pisoDpto\": 3,\r\n            \"cliente\": {\r\n                \"id\": 1,\r\n                \"nombre\": \"Diego\",\r\n                \"apellido\": \"Maradona\",\r\n                \"telefono\": \"2613612107\",\r\n                \"email\": \"Diegote@gmail.com\",\r\n                \"usuario\": {\r\n                    \"id\": 1,\r\n                    \"auth0Id\": \"1\",\r\n                    \"username\": \"\",\r\n                    \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                    \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                    \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n                },\r\n                \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n            },\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"cliente\": {\r\n            \"id\": 1,\r\n            \"nombre\": \"Diego\",\r\n            \"apellido\": \"Maradona\",\r\n            \"telefono\": \"2613612107\",\r\n            \"email\": \"Diegote@gmail.com\",\r\n            \"usuario\": {\r\n                \"id\": 1,\r\n                \"auth0Id\": \"1\",\r\n                \"username\": \"\",\r\n                \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n            },\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/DetallePedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"DetallePedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"cantidad\": 10,\r\n    \"subtotal\": 5443.00,\r\n    \"subtotalCosto\": 10000.00,\r\n    \"articuloInsumo\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Denominacion\",\r\n        \"urlImagen\": \"https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg\",\r\n        \"precioCompra\": 5443.00,\r\n        \"stockActual\": 10.00,\r\n        \"stockMinimo\": 5.00,\r\n        \"unidadMedida\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Masa\",\r\n            \"abreviatura\": \"KG\",\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"categoriaArticulo\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Carne\",\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    },\r\n    \"producto\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Hamburguesa Tasty\",\r\n        \"descripcion\": \"Inigualable pan con semillas de sésamo, tres medallones de carne 100% vacuna, tres fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty\",\r\n        \"tiempoEstimadoCocina\": 45,\r\n        \"precioVenta\": 10000.00,\r\n        \"costo\": 10.00,\r\n        \"urlImagen\": \"https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg\",\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    },\r\n    \"pedido\": {\r\n        \"id\": 1,\r\n        \"fechaPedido\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"horaEstimadaFinalizacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"total\": 10.00,\r\n        \"totalCosto\": 5.00,\r\n        \"estado\": \"COMPLETADO\",\r\n        \"tipoEnvio\": \"DELIVERY\",\r\n        \"formaPago\": \"MERCADO_PAGO\",\r\n        \"domicilioEntrega\": {\r\n            \"id\": 1,\r\n            \"calle\": \"Los Reyunos\",\r\n            \"numero\": 4517,\r\n            \"numeroDpto\": 27,\r\n            \"pisoDpto\": 3,\r\n            \"cliente\": {\r\n                \"id\": 1,\r\n                \"nombre\": \"Diego\",\r\n                \"apellido\": \"Maradona\",\r\n                \"telefono\": \"2613612107\",\r\n                \"email\": \"Diegote@gmail.com\",\r\n                \"usuario\": {\r\n                    \"id\": 1,\r\n                    \"auth0Id\": \"1\",\r\n                    \"username\": \"\",\r\n                    \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                    \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                    \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n                },\r\n                \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n            },\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"cliente\": {\r\n            \"id\": 1,\r\n            \"nombre\": \"Diego\",\r\n            \"apellido\": \"Maradona\",\r\n            \"telefono\": \"2613612107\",\r\n            \"email\": \"Diegote@gmail.com\",\r\n            \"usuario\": {\r\n                \"id\": 1,\r\n                \"auth0Id\": \"1\",\r\n                \"username\": \"\",\r\n                \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n            },\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/DetallePedido/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"DetallePedido",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/DetallePedido/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"DetallePedido",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Factura",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"facturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"fechaFacturacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"mpPaymentId\": 7848,\r\n    \"mpMerchantOrderId\": 7981,\r\n    \"mpPreferenceId\": \"prerenceID\",\r\n    \"mpPaymentType\": \"pmt\",\r\n    \"formaPago\": \"MERCADO_PAGO\",\r\n    \"totalVenta\": 5000.00,\r\n    \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"pedido\": {\r\n        \"id\": 1,\r\n        \"fechaPedido\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"horaEstimadaFinalizacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"total\": 10.00,\r\n        \"totalCosto\": 5.00,\r\n        \"estado\": \"COMPLETADO\",\r\n        \"tipoEnvio\": \"DELIVERY\",\r\n        \"formaPago\": \"MERCADO_PAGO\",\r\n        \"domicilioEntrega\": {\r\n            \"id\": 1,\r\n            \"calle\": \"Los Reyunos\",\r\n            \"numero\": 4517,\r\n            \"numeroDpto\": 27,\r\n            \"pisoDpto\": 3,\r\n            \"cliente\": {\r\n                \"id\": 1,\r\n                \"nombre\": \"Diego\",\r\n                \"apellido\": \"Maradona\",\r\n                \"telefono\": \"2613612107\",\r\n                \"email\": \"Diegote@gmail.com\",\r\n                \"usuario\": {\r\n                    \"id\": 1,\r\n                    \"auth0Id\": \"1\",\r\n                    \"username\": \"\",\r\n                    \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                    \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                    \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n                },\r\n                \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n            },\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"cliente\": {\r\n            \"id\": 1,\r\n            \"nombre\": \"Diego\",\r\n            \"apellido\": \"Maradona\",\r\n            \"telefono\": \"2613612107\",\r\n            \"email\": \"Diegote@gmail.com\",\r\n            \"usuario\": {\r\n                \"id\": 1,\r\n                \"auth0Id\": \"1\",\r\n                \"username\": \"\",\r\n                \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n            },\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"facturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"fechaFacturacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"mpPaymentId\": 7848,\r\n    \"mpMerchantOrderId\": 7981,\r\n    \"mpPreferenceId\": \"prerenceID\",\r\n    \"mpPaymentType\": \"pmt\",\r\n    \"formaPago\": \"MERCADO_PAGO\",\r\n    \"totalVenta\": 5000.00,\r\n    \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"pedido\": {\r\n        \"id\": 1,\r\n        \"fechaPedido\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"horaEstimadaFinalizacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"total\": 10.00,\r\n        \"totalCosto\": 5.00,\r\n        \"estado\": \"COMPLETADO\",\r\n        \"tipoEnvio\": \"DELIVERY\",\r\n        \"formaPago\": \"MERCADO_PAGO\",\r\n        \"domicilioEntrega\": {\r\n            \"id\": 1,\r\n            \"calle\": \"Los Reyunos\",\r\n            \"numero\": 4517,\r\n            \"numeroDpto\": 27,\r\n            \"pisoDpto\": 3,\r\n            \"cliente\": {\r\n                \"id\": 1,\r\n                \"nombre\": \"Diego\",\r\n                \"apellido\": \"Maradona\",\r\n                \"telefono\": \"2613612107\",\r\n                \"email\": \"Diegote@gmail.com\",\r\n                \"usuario\": {\r\n                    \"id\": 1,\r\n                    \"auth0Id\": \"1\",\r\n                    \"username\": \"\",\r\n                    \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                    \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                    \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n                },\r\n                \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n            },\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"cliente\": {\r\n            \"id\": 1,\r\n            \"nombre\": \"Diego\",\r\n            \"apellido\": \"Maradona\",\r\n            \"telefono\": \"2613612107\",\r\n            \"email\": \"Diegote@gmail.com\",\r\n            \"usuario\": {\r\n                \"id\": 1,\r\n                \"auth0Id\": \"1\",\r\n                \"username\": \"\",\r\n                \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n            },\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DetalleFactura",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/DetalleFactura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"DetalleFactura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/DetalleFactura/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"DetalleFactura",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cantidad\": 20,\r\n    \"subtotal\": 1,\r\n    \"articuloInsumo\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Denominacion\",\r\n        \"urlImagen\": \"https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg\",\r\n        \"precioCompra\": 5443.00,\r\n        \"stockActual\": 10.00,\r\n        \"stockMinimo\": 5.00,\r\n        \"unidadMedida\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Masa\",\r\n            \"abreviatura\": \"KG\",\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"categoriaArticulo\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Carne\",\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    },\r\n    \"producto\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Hamburguesa Tasty\",\r\n        \"descripcion\": \"Inigualable pan con semillas de sésamo, tres medallones de carne 100% vacuna, tres fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty\",\r\n        \"tiempoEstimadoCocina\": 45,\r\n        \"precioVenta\": 10000.00,\r\n        \"costo\": 10.00,\r\n        \"urlImagen\": \"https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg\",\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    },\r\n    \"factura\": {\r\n        \"id\": 2,\r\n        \"fechaFacturacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"mpPaymentId\": 7848,\r\n        \"mpMerchantOrderId\": 7981,\r\n        \"mpPreferenceId\": \"prerenceID\",\r\n        \"mpPaymentType\": \"pmt\",\r\n        \"formaPago\": \"MERCADO_PAGO\",\r\n        \"totalVenta\": 10000.00,\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"pedido\": {\r\n            \"id\": 2,\r\n            \"fechaPedido\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"horaEstimadaFinalizacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"total\": 10.00,\r\n            \"totalCosto\": 5.00,\r\n            \"estado\": \"COMPLETADO\",\r\n            \"tipoEnvio\": \"DELIVERY\",\r\n            \"formaPago\": \"MERCADO_PAGO\",\r\n            \"domicilioEntrega\": null,\r\n            \"cliente\": null,\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/DetalleFactura",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"DetalleFactura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2,\r\n    \"cantidad\": 2,\r\n    \"subtotal\": 1,\r\n    \"articuloInsumo\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Denominacion\",\r\n        \"urlImagen\": \"https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg\",\r\n        \"precioCompra\": 5443.00,\r\n        \"stockActual\": 10.00,\r\n        \"stockMinimo\": 5.00,\r\n        \"unidadMedida\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Masa\",\r\n            \"abreviatura\": \"KG\",\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"categoriaArticulo\": {\r\n            \"id\": 1,\r\n            \"denominacion\": \"Carne\",\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    },\r\n    \"producto\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Hamburguesa Tasty\",\r\n        \"descripcion\": \"Inigualable pan con semillas de sésamo, tres medallones de carne 100% vacuna, tres fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty\",\r\n        \"tiempoEstimadoCocina\": 45,\r\n        \"precioVenta\": 10000.00,\r\n        \"costo\": 10.00,\r\n        \"urlImagen\": \"https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg\",\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    },\r\n    \"factura\": {\r\n        \"id\": 2,\r\n        \"fechaFacturacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"mpPaymentId\": 7848,\r\n        \"mpMerchantOrderId\": 7981,\r\n        \"mpPreferenceId\": \"prerenceID\",\r\n        \"mpPaymentType\": \"pmt\",\r\n        \"formaPago\": \"MERCADO_PAGO\",\r\n        \"totalVenta\": 10000.00,\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"pedido\": {\r\n            \"id\": 2,\r\n            \"fechaPedido\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"horaEstimadaFinalizacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"total\": 10.00,\r\n            \"totalCosto\": 5.00,\r\n            \"estado\": \"COMPLETADO\",\r\n            \"tipoEnvio\": \"DELIVERY\",\r\n            \"formaPago\": \"MERCADO_PAGO\",\r\n            \"domicilioEntrega\": null,\r\n            \"cliente\": null,\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/DetalleFactura/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"DetalleFactura",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/DetalleFactura/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"DetalleFactura",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UnidadMedida",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/unidadMedidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"unidadMedidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/unidadMedidas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"unidadMedidas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Mesa\",\r\n    \"abreviatura\": \"KG\",\r\n    \"fechaAlta\": \"2023-10-25T13:38:31.552+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:38:31.552+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:38:31.552+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/unidadMedidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"unidadMedidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"denominacion\": \"Masa\",\r\n    \"abreviatura\": \"Gr\",\r\n    \"fechaAlta\": \"2023-10-25T13:38:31.552+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:38:31.552+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:38:31.552+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/unidadMedidas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"unidadMedidas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/unidadMedidas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"unidadMedidas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Condimento\",\r\n    \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"denominacion\": \"Verdura\",\r\n    \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/categorias/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"categorias",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/categorias/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"categorias",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ArticuloInsumo",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/articulos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"articulos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/articulos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"articulos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Lechuga\",\r\n    \"urlImagen\": \"Ejemplo\",\r\n    \"precioCompra\": 5,\r\n    \"stockActual\": 1,\r\n    \"stockMinimo\": 5.00,\r\n    \"unidadMedida\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Masa\",\r\n        \"abreviatura\": \"KG\",\r\n        \"fechaAlta\": \"2023-10-25T12:39:42.935+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T12:39:42.935+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T12:39:42.935+00:00\"\r\n    },\r\n    \"categoriaArticulo\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Carne\",\r\n        \"fechaAlta\": \"2023-10-25T12:39:42.935+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T12:39:42.935+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T12:39:42.935+00:00\"\r\n    },\r\n    \"fechaAlta\": \"2023-10-25T12:39:42.935+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T12:39:42.935+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T12:39:42.935+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/articulos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"articulos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"id\": 2,\r\n    \"denominacion\": \"Lomo\",\r\n    \"urlImagen\": \"Ejemplo\",\r\n    \"precioCompra\": 5.00,\r\n    \"stockActual\": 1.00,\r\n    \"stockMinimo\": 5.00,\r\n    \"unidadMedida\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Masa\",\r\n        \"abreviatura\": \"KG\",\r\n        \"fechaAlta\": \"2023-10-25T12:39:42.935+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T12:39:42.935+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T12:39:42.935+00:00\"\r\n    },\r\n    \"categoriaArticulo\": {\r\n        \"id\": 1,\r\n        \"denominacion\": \"Carne\",\r\n        \"fechaAlta\": \"2023-10-25T12:39:42.935+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T12:39:42.935+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T12:39:42.935+00:00\"\r\n    },\r\n    \"fechaAlta\": \"2023-10-25T12:39:42.935+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T12:39:42.935+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T12:39:42.935+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/articulos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"articulos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/articulos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"articulos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Domicilio",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/domicilios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"domicilios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/domicilios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"domicilios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"calle\": \"Chamba\",\r\n    \"numero\": 12,\r\n    \"numeroDpto\": 27,\r\n    \"pisoDpto\": 3,\r\n    \"cliente\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/domicilios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"domicilios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2,\r\n    \"calle\": \"Lagart\",\r\n    \"numero\": 12,\r\n    \"numeroDpto\": 27,\r\n    \"pisoDpto\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/domicilios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"domicilios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/domicilios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"domicilios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"auth0Id\": \"2\",\r\n    \"username\": \"Paco mc\",\r\n    \"fechaAlta\": \"2023-10-18T23:05:10.568+00:00\",\r\n    \"fechaModificacion\": \"2023-10-18T23:05:10.568+00:00\",\r\n    \"fechaBaja\": \"2023-10-18T23:05:10.568+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"auth0Id\": \"2\",\r\n    \"username\": \"El mas que sabe\",\r\n    \"fechaAlta\": \"2023-10-18T23:05:10.568+00:00\",\r\n    \"fechaModificacion\": \"2023-10-18T23:05:10.568+00:00\",\r\n    \"fechaBaja\": \"2023-10-18T23:05:10.568+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Localidad",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/localidad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"localidad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/localidad/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"localidad",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Godoy Cruz\",\r\n    \"codigoPostal\": 5519,\r\n    \"domicilios\": [null]\r\n    }\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8088/localidad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"localidad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"nombre\": \"Peru\",\r\n    \"codigoPostal\": 5519,\r\n    \"domicilios\": [\r\n        null\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/localidad/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"localidad",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/localidad/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"localidad",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Queries personalizadas",
+			"item": [
+				{
+					"name": "HU-1 y 4 Registro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"auth0Id\": \"2\",\r\n    \"username\": \"Paco mc\",\r\n    \"fechaAlta\": \"2023-10-18T23:05:10.568+00:00\",\r\n    \"fechaModificacion\": \"2023-10-18T23:05:10.568+00:00\",\r\n    \"fechaBaja\": \"2023-10-18T23:05:10.568+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-2 y 5 Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/usuarios/validarUsuario?filtro1=Diegote@gmail.com&filtro2=123456&page=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"usuarios",
+								"validarUsuario"
+							],
+							"query": [
+								{
+									"key": "filtro1",
+									"value": "Diegote@gmail.com"
+								},
+								{
+									"key": "filtro2",
+									"value": "123456"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-3 y 6 EditarDatos",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"nombre\": \"Lionel\",\r\n    \"apellido\": \"Messi\",\r\n    \"telefono\": \"2613615007\",\r\n    \"email\": \"boca@gmail.com\",\r\n    \"usuario\": null,\r\n    \"fechaAlta\": null,\r\n    \"fechaModificacion\": null,\r\n    \"fechaBaja\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"clientes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-7 y 8",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"nombre\": \"Lionel\",\r\n    \"apellido\": \"Messi\",\r\n    \"telefono\": \"2613615007\",\r\n    \"email\": \"boca@gmail.com\",\r\n    \"usuario\": null,\r\n    \"fechaAlta\": null,\r\n    \"fechaModificacion\": null,\r\n    \"fechaBaja\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"clientes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-9 ObtenerTodosLosProductos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-9 ObtenerUnSoloProducto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/productos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"productos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-9 y 10 BuscarProductosPorNombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/productos/search?filtro=x&page=0&size=5&sort",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"productos",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "x"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-11 AgregarProductoCarrito",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/productos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"productos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-13 HistorialPedidoCliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/pedido/search?filtro=COMPLE&page=0&size=5&sort",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"pedido",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "COMPLE"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU- 13 GetFacturaPedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/facturas/searchFacturaPedido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"facturas",
+								"searchFacturaPedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-14, 16 y 17 FiltrarPedidosPorEstado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/pedido/search?filtro=COMPLE&page=0&size=5&sort",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"pedido",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "COMPLE"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-15 y 16 EstadoPedido",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"fechaPedido\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"horaEstimadaFinalizacion\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"total\": 5,\r\n    \"totalCosto\": 5.00,\r\n    \"estado\": \"COMPLETADO\",\r\n    \"tipoEnvio\": \"DELIVERY\",\r\n    \"formaPago\": \"MERCADO_PAGO\",\r\n    \"domicilioEntrega\": null,\r\n    \"cliente\": null,\r\n    \"fechaAlta\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:32:59.143+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:32:59.143+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/pedido/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"pedido",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-17 BuscarDetallePedidoPedido",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "HU-18 Facturar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"fechaFacturacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"mpPaymentId\": 7848,\r\n    \"mpMerchantOrderId\": 7981,\r\n    \"mpPreferenceId\": \"prerenceID\",\r\n    \"mpPaymentType\": \"pmt\",\r\n    \"formaPago\": \"MERCADO_PAGO\",\r\n    \"totalVenta\": 5000.00,\r\n    \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"pedido\": {\r\n        \"id\": 1,\r\n        \"fechaPedido\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"horaEstimadaFinalizacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"total\": 10.00,\r\n        \"totalCosto\": 5.00,\r\n        \"estado\": \"COMPLETADO\",\r\n        \"tipoEnvio\": \"DELIVERY\",\r\n        \"formaPago\": \"MERCADO_PAGO\",\r\n        \"domicilioEntrega\": {\r\n            \"id\": 1,\r\n            \"calle\": \"Los Reyunos\",\r\n            \"numero\": 4517,\r\n            \"numeroDpto\": 27,\r\n            \"pisoDpto\": 3,\r\n            \"cliente\": {\r\n                \"id\": 1,\r\n                \"nombre\": \"Diego\",\r\n                \"apellido\": \"Maradona\",\r\n                \"telefono\": \"2613612107\",\r\n                \"email\": \"Diegote@gmail.com\",\r\n                \"usuario\": {\r\n                    \"id\": 1,\r\n                    \"auth0Id\": \"1\",\r\n                    \"username\": \"\",\r\n                    \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                    \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                    \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n                },\r\n                \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n            },\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"cliente\": {\r\n            \"id\": 1,\r\n            \"nombre\": \"Diego\",\r\n            \"apellido\": \"Maradona\",\r\n            \"telefono\": \"2613612107\",\r\n            \"email\": \"Diegote@gmail.com\",\r\n            \"usuario\": {\r\n                \"id\": 1,\r\n                \"auth0Id\": \"1\",\r\n                \"username\": \"\",\r\n                \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n                \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n            },\r\n            \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n            \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n        },\r\n        \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n        \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"facturas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-20 y 21 ABM Categoria",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Condimento\",\r\n    \"fechaAlta\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:07:42.546+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:07:42.546+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-20 y 21 Baja Categoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/categorias/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"categorias",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-22 ABM Producto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\": \"Hamburguesa\",\r\n    \"descripcion\": \"Inigualable pan con semillas de sésamo, tres medallones de carne 100% vacuna, tres fetas de nuestro exclusivo Queso Cheddar, cebolla, lechuga y tomate frescos. Sumado a estos ingredientes la única e inigualable Salsa Tasty\",\r\n    \"tiempoEstimadoCocina\": 45,\r\n    \"precioVenta\": 10000.00,\r\n    \"costo\": 10.00,\r\n    \"urlImagen\": \"https://brandemia.org/contenido/subidas/2022/02/000-river-plate.jpg\",\r\n    \"fechaAlta\": \"2023-10-25T13:38:31.552+00:00\",\r\n    \"fechaModificacion\": \"2023-10-25T13:38:31.552+00:00\",\r\n    \"fechaBaja\": \"2023-10-25T13:38:31.552+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8088/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-22 BajaProducto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/productos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"productos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-22 CategoriaAlta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/categorias/searchbyalta?page=0&size=5&sort",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"categorias",
+								"searchbyalta"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-22 y 23 Insumo Alta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/articulos/searchbyalta?page=0&size=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"articulos",
+								"searchbyalta"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HU-24 StockBajo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/articulos/searchbystock?page=0&size=5&sort",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"articulos",
+								"searchbystock"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PedidosFinanza",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8088/pedido/searchbyFinanza?page=0&size=5&sort",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8088",
+							"path": [
+								"pedido",
+								"searchbyFinanza"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
