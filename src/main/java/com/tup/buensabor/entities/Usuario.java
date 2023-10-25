@@ -44,5 +44,9 @@ public class Usuario extends Base {
     private Date fechaBaja;
 
 
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> TestAnfran
