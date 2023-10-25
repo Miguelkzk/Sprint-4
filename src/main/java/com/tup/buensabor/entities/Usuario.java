@@ -26,6 +26,10 @@ public class Usuario extends Base {
     private String username;
 
     @NotNull
+    @Column(name = "password", nullable = false)
+    private String password;
+
+    @NotNull
     @Column(name = "fecha_alta")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaAlta;
