@@ -42,4 +42,5 @@ public class Usuario extends Base {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
+
 }
