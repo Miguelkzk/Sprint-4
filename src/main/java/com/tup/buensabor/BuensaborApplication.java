@@ -65,7 +65,8 @@ public class BuensaborApplication {
 				.fechaBaja(date)
 				.fechaModificacion(date)
 				.auth0Id("1")
-				.username("")
+				.username("ElDiego")
+				.password("123456")
 				.build();
 
 
