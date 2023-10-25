@@ -19,7 +19,17 @@ public class FacturaServiceImpl extends BaseServiceImpl<Factura,Long> implements
     @Override
     public Page<Factura> search(String filtro1,String flitro2, Pageable pageable) throws Exception {
         try{
-            Page<Factura> facturas=facturaRepository.search(filtro1,flitro2,pageable);
+            Page<Factura> facturas=facturaRepository.search(filtro1, flitro2, pageable);
+            return facturas;
+        }catch (Exception e){
+            throw new Exception((e.getMessage()));
+        }
+    }
+
+    @Override
+    public Page<Factura> searchFacturaPedido(String filtro, Pageable pageable) throws Exception {
+        try{
+            Page<Factura> facturas=facturaRepository.searchFacturaPedido(filtro, pageable);
             return facturas;
         }catch (Exception e){
             throw new Exception((e.getMessage()));

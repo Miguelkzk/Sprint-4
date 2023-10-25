@@ -21,4 +21,15 @@ public class FacturaController extends BaseControllerImpl<Factura, FacturaServic
         }
 
     }
+
+    @GetMapping("/searchFacturaPedido")
+    public ResponseEntity<?> searchFacturaPedido(@RequestParam String filtro, Pageable pageable) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.searchFacturaPedido(filtro, pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+
+    }
+
 }

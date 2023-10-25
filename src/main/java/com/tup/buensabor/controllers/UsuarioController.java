@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServiceImpl> {
 
-    @GetMapping("/searchUsuario")
+    @GetMapping("/validarUsuario")
     public ResponseEntity<?> searchUsuario(String filtro1, String filtro2, Pageable pageable) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.searchUsuario(filtro1, filtro2, pageable));

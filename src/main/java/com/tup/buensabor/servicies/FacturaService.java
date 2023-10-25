@@ -9,4 +9,5 @@ import org.springframework.data.repository.query.Param;
 
 public interface FacturaService extends BaseService<Factura,Long> {
     Page<Factura> search(String filtro1,String filtro2, Pageable pageable) throws Exception;
+    Page<Factura> searchFacturaPedido(String filtro, Pageable pageable) throws Exception;
 }

@@ -18,4 +18,9 @@ public interface FacturaRepository extends BaseRepository<Factura, Long> {
             nativeQuery = true
     )
     Page<Factura> search(@Param("filtro1") String filtro1, @Param("filtro2") String filtro2, Pageable pageable);
+    @Query(
+            value = "SELECT F.* FROM FACTURA AS F JOIN PEDIDO ON F.id_pedido = PEDIDO.id WHERE PEDIDO.id = %:filtro",
+            nativeQuery = true
+    )
+    Page<Factura> searchFacturaPedido(@Param("filtro") String filtro1, Pageable pageable);
 }

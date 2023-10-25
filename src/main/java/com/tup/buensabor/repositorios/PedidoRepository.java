@@ -31,4 +31,11 @@ public interface PedidoRepository extends BaseRepository<Pedido, Long> {
             nativeQuery = true
     )
     Page<Pedido> searchbyFinanza(@Param("filtro1") String filtro1, @Param("filtro2") String filtro2, Pageable pageable);
+
+    @Query(
+            value = "SELECT P.* FROM PEDIDO AS P JOIN detalle_pedido ON P.id = detalle_pedido.id_pedido WHERE P.id = %:filtro",
+            nativeQuery = true
+    )
+    Page<Pedido> searchDetallePedido(@Param("filtro")String filtro, Pageable pageable);
+
 }
