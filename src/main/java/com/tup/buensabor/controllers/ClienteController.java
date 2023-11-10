@@ -4,9 +4,12 @@ import com.tup.buensabor.entities.Cliente;
 import com.tup.buensabor.servicies.BaseServiceImpl;
 import com.tup.buensabor.servicies.ClienteServiceImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -35,6 +38,14 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
     public ResponseEntity<?> searchDetallePedido(Pageable pageable) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.searchDetallePedido(pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
+        }
+    }
+    @GetMapping("/rankingPersonas")
+    public ResponseEntity<?> rankingClientes(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date desde, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)  Date hasta) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.rankingClientes(desde, hasta));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(("{\"error\": \"" + e.getMessage() + "\"}"));
         }

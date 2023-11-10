@@ -1,5 +1,7 @@
 package com.tup.buensabor.repositorios;
 
+import com.tup.buensabor.DTO.DTORankingClientes;
+import com.tup.buensabor.DTO.RankingProductoDto;
 import com.tup.buensabor.entities.Cliente;
 import com.tup.buensabor.entities.Pedido;
 import org.springframework.data.domain.Page;
@@ -7,6 +9,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.Date;
+import java.util.List;
 
 @Repository
 
@@ -29,4 +34,31 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
             nativeQuery = true
     )
     Page<Cliente> searchDetallePedido(Pageable pageable);
+
+    @Query(
+            value = "SELECT sum(f.total_venta) as total, c.nombre as persona, count(p.id) as cantidadPedidos " +
+                    "FROM cliente as c " +
+                    "LEFT JOIN pedido as p ON p.id_cliente LIKE p.id " +
+                    "LEFT JOIN factura as f ON f.id LIKE f.id_pedido " +
+                    "WHERE f.fecha_facturacion BETWEEN :desde AND :hasta " +
+                    "GROUP BY c.id, c.nombre " +
+                    "ORDER BY cantidadPedidos DESC ",
+            nativeQuery = true
+    )
+    List<DTORankingClientes> rankingClientes(@Param("desde") Date desde, @Param("hasta") Date hasta);
+ /*
+
+    @Query(
+            value = "SELECT new com.tup.buensabor.DTO.DTORankingClientes(dp.producto.denominacion, sum(f.total_venta) as total, c.nombre as persona, count(p.id) as cantidadPedidos " +
+                    "FROM cliente as c " +
+                    "LEFT JOIN pedido as p ON p.id_cliente LIKE p.id " +
+                    "LEFT JOIN factura as f ON f.id LIKE f.id_pedido " +
+                    "WHERE f.fecha_facturacion BETWEEN :fechaDesde AND :fechaHasta  " +
+                    "GROUP BY c.id, c.nombre " +
+                    "ORDER BY cantidadPedidos DESC )"
+    )
+    List<DTORankingClientes> rankingClientes(@Param("fechaDesde") Date fechaDesde, @Param("fechaHasta") Date fechaHasta);
+
+  */
 }
+// SELECT sum(f.total_venta) as total, c.nombre as persona, count(p.id) as cantidadPedidos FROM cliente as c LEFT JOIN pedido as p ON p.id_cliente LIKE p.id LEFT JOIN factura as f ON f.id LIKE f.id_pedido  GROUP BY c.id, c.nombre ORDER BY cantidadPedidos DESC

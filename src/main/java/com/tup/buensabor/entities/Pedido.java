@@ -1,5 +1,6 @@
 package com.tup.buensabor.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.tup.buensabor.enums.EstadoPedido;
 import com.tup.buensabor.enums.FormaPago;
 import com.tup.buensabor.enums.TipoEnvio;
@@ -10,6 +11,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Builder
@@ -61,6 +63,10 @@ public class Pedido extends Base {
     @ManyToOne()
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
+
+    @JsonManagedReference(value = "pedido-detalle-pedido")
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)            //Relacion con DetallePedido
+    private List<DetallePedido> detallePedido;
 
     @NotNull
     @Column(name = "fecha_alta")

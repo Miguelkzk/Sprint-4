@@ -1,5 +1,6 @@
 package com.tup.buensabor.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import lombok.*;
@@ -37,7 +38,8 @@ public class DetallePedido extends Base {
     @JoinColumn(name = "id_articulo_manufacturado")
     private Producto producto;
 
-    @NotNull
+
+    @JsonBackReference(value = "pedido-detalle-pedido")
     @ManyToOne()
     @JoinColumn(name = "id_pedido")
     private Pedido pedido;
